@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar Shrestha-Greene - Data Analyst Portfolio</title>
+	
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
     <style>
         /* General Styles */
         body {
@@ -187,11 +191,13 @@
     </nav>
 
     <section id="about" class="container">
+ <br>
+      
         <h2>About Me</h2>
         <p>
-            Motivated data analytics graduate student with a solid foundation in data visualization, business analysis, and
+             👋Hi! I'm a motivated data analytics graduate student with a solid foundation in data visualization, business analysis, and
             reporting. Skilled in MySQL, Python, R Studio, Power BI, Tableau, and Microsoft Excel, with experience in leveraging data to uncover
-            insights and support decision-making. Seeking an internship to apply academic knowledge to real-world business challenges.
+            insights and support decision-making. Seeking an internship to apply academic knowledge to real-world business challenges.❤️
         </p>
     </section>
 
@@ -307,6 +313,32 @@
         <p>Phone: 304-319-0236</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/solarshrestha" target="_blank">LinkedIn Profile</a></p>
     </section>
+
+
+<!-- Map Section -->
+<section class="container">
+    <h2>Location</h2>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize the map
+        var map = L.map('map').setView([39.1343, -77.6907], 10); // Adjusted center for better view
+
+        // Load map tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+        // Add a marker
+        L.marker([39.1343, -77.6907]).addTo(map)
+            .bindPopup('<b>My Location</b><br>Maryland, USA')
+            .openPopup();
+    });
+</script>
+
 
     <footer>
         <p>&copy; 2024 Solar Shrestha-Greene</p>
