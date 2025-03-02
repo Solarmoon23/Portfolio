@@ -46,8 +46,8 @@
         .container {
             max-width: 900px;
             margin: auto;
-            overflow: hidden;
             padding: 0 20px;
+            text-align: left;
         }
 
         footer {
@@ -62,7 +62,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .card {
@@ -95,7 +95,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 20px;
+            padding: 10px;
             background: rgba(0, 0, 0, 0.7);
             transform: translateY(100%);
             transition: transform 0.3s ease;
@@ -107,12 +107,67 @@
 
         .details h3 {
             margin: 0;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .details p {
             margin: 5px 0 0;
+            font-size: 12px;
+        }
+
+        /* Employment Timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            top: 50%;
+            left: 0;
+            z-index: -1;
+        }
+
+        .event {
+            position: relative;
+            text-align: left;
+            width: 23%;
+        }
+
+        .event .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #6b9f89;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            top: -5px;
+        }
+
+        .event h3 {
             font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .event p {
+            font-size: 12px;
+            font-style: italic;
+            color: gray;
+        }
+
+        /* Skills List */
+        .skills ul {
+            list-style-type: square;
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -136,20 +191,19 @@
         <p>
             Motivated data analytics graduate student with a solid foundation in data visualization, business analysis, and
             reporting. Skilled in MySQL, Python, R Studio, Power BI, Tableau, and Microsoft Excel, with experience in leveraging data to uncover
-            insights and support decision-making. Seeking an internship to apply academic knowledge to real-world business
-            challenges.
+            insights and support decision-making. Seeking an internship to apply academic knowledge to real-world business challenges.
         </p>
     </section>
 
     <section id="education" class="container">
         <h2>Education</h2>
-        <p><strong>Master's of Science: Data Analyst/ Data Science Major</strong><br>Southern New Hampshire University</p>
-        <p><strong>Bachelor's of Science: Business Management/ Management Information Systems Major</strong><br>Southern New Hampshire University</p>
+        <p><strong>Master's of Science: Data Analytics</strong><br>Southern New Hampshire University</p>
+        <p><strong>Bachelor's of Science: Business Management/Management Information Systems</strong><br>Southern New Hampshire University</p>
     </section>
 
     <section id="experience" class="container">
         <h2>Work Experience</h2>
-        <p><strong>Service Delivery Team Lead</strong><br>TTEC (09/2019 - 09/2021, Remote)</p>
+         <p><strong>Service Delivery Team Lead</strong><br>TTEC (09/2019 - 09/2021, Remote)</p>
         <ul>
             <li>Analyzed and presented operational metrics to improve efficiency.</li>
             <li>Created performance dashboards to visualize agent productivity using Tableau.</li>
@@ -164,94 +218,40 @@
         </ul>
     </section>
 
-
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employment Timeline</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .timeline {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            width: 80%;
-            margin: 50px auto;
-        }
-        .timeline::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: black;
-            top: 50%;
-            left: 0;
-            z-index: -1;
-        }
-        .event {
-            position: relative;
-            text-align: center;
-            width: 20%;
-        }
-        .event .dot {
-            width: 12px;
-            height: 12px;
-            background-color: #6b9f89;
-            border-radius: 50%;
-            display: inline-block;
-            position: relative;
-            top: -5px;
-        }
-        .event h3 {
-            font-size: 14px;
-            margin: 5px 0;
-        }
-        .event p {
-            font-size: 12px;
-            font-style: italic;
-            color: gray;
-        }
-    </style>
-</head>
-<body>
-    <section id= "Employment Timeline" class="container">
-             <h2>Employment Timeline</h2>
-             <div class="timeline">
-        <div class="event">
-            <h3>Senior Client Advocate</h3>
-            <p>Bank of America</p>
-            <span class="dot"></span>
-            <p><strong>2011-2019</strong></p>
-        </div>
-        <div class="event">
-            <h3>Service Team Manager</h3>
-            <p>Bank of America</p>
-            <span class="dot"></span>
-            <p><strong>2019-2021</strong></p>
-        </div>
-        <div class="event">
-            <h3>Training Specialist</h3>
-            <p>Bank of America</p>
-            <span class="dot"></span>
-            <p><strong>2021-2024</strong></p>
-        </div>
-        <div class="event">
+    <section id="employment-timeline" class="container">
+        <h2>Employment Timeline</h2>
+        <div class="timeline">
+            <div class="event">
+                <h3>Senior Client Advocate</h3>
+                <p>Bank of America</p>
+                <span class="dot"></span>
+                <p><strong>2011-2019</strong></p>
+            </div>
+            <div class="event">
+                <h3>Service Team Manager</h3>
+                <p>Bank of America</p>
+                <span class="dot"></span>
+                <p><strong>2019-2021</strong></p>
+            </div>
+            <div class="event">
+                <h3>Training Specialist</h3>
+                <p>Bank of America</p>
+                <span class="dot"></span>
+                <p><strong>2021-2024</strong></p>
+            </div>
+		<div class="event">
             <h3>Data Analyst Intern/Billing Specialist</h3>
             <p>Deep Creek Concierge</p>
             <span class="dot"></span>
             <p><strong>2024-Present</strong></p>
         </div>
-  
-    </div>
-</body>
-
+        </div>
     </section>
 
-    <section id="skills" class="container skills">
+	
+
+    <section id="contact" class="container">
+	 <section id="skills" class="container skills">
         <h2>Skills</h2>
         <ul>
             <li>Data Visualization (Power BI, Tableau)</li>
@@ -302,11 +302,10 @@
         </div>
     </section>
 
-    <section id="contact" class="container">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:solarshrestha@live.com">solarshrestha@live.com</a></p>
         <p>Phone: 304-319-0236</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/solarshrestha" target="_blank">www.linkedin.com/in/solarshrestha</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/solarshrestha" target="_blank">LinkedIn Profile</a></p>
     </section>
 
     <footer>
