@@ -332,7 +332,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Initialize the map
-        var map = L.map('map').setView([39.1343, -77.6907], 10); // Adjusted center for better view
+        var map = L.map('map').setView([39.6295, -799559], 13); // Adjusted center for better view
 
         // Load map tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -341,7 +341,7 @@
         }).addTo(map);
 
         // Add a marker
-        L.marker([39.1343, -77.6907]).addTo(map)
+        L.marker([39.6295, -79.9559]).addTo(map)
             .bindPopup('<b>My Location</b><br>Maryland, USA')
             .openPopup();
     });
